@@ -1,0 +1,52 @@
+version: 0.2
+
+env:
+  variables:
+    BUCKET: pr1841stg
+    REGION: en-gb
+    CODEBUILD_BUILD_SUCCEEDING: 1
+phases:
+  build:
+    commands:
+#      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_GB_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN}/g" malts-${REGION}/public/app*.js
+#      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_DE_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN_DE}/g" malts-${REGION}/public/app*.js
+#      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_GB_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME}/g" malts-${REGION}/public/app*.js
+#      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_DE_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME_DE}/g" malts-${REGION}/public/app*.js
+#      - sed -i "s/REPLACE_THIS_WITH_ID_OF_CLIENT_FOR_AUTH0/${GATSBY_AUTH0_CLIENT_ID}/g" malts-${REGION}/public/app*.js
+#      - echo Starting S3 upload for ${REGION} the S3 bucket ${BUCKET}
+#      - aws s3 sync "malts-${REGION}/public/" "s3://${BUCKET}/${REGION}/"   --acl "public-read" --quiet
+  post_build:
+    commands:
+      - | # Check region and only run for en-gb
+        if expr $CODEBUILD_BUILD_SUCCEEDING = 1 && expr ${REGION} = "en-gb" && expr ${BUCKET} = "pr1841stg"; then
+          echo Starting chrome installation and other dependencies
+          # Get Chrome Information
+                        echo Installing Chrome stable
+                        curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+                        apt-get -y update
+                      # Install chrome
+                        apt-get -y install google-chrome-stable
+                      # Installation of all required packages.
+          npm install -g yarn
+          yarn install
+          npx cypress install --force #This is only useful in the local environment debugging
+          npx wait-on http://${BUCKET}.s3-website-eu-west-1.amazonaws.com/${REGION}/
+          echo Running e2e tests
+          npm run e2e
+        fi
+#reports:
+#  cypress-report-group: #cypress e2e reports
+#    files:
+#      -"screenshots/**/*"
+#      -"TestReport/cypress-tests-report.html"
+#      -"cypress-tests-result.json"
+#    file-format: CucumberJson
+#    base-directory: "malts-theme/test/e2e/cypress/"
+#artifacts:
+#  base-directory: .
+#  files:
+#    - "malts-theme/test/e2e/cypress/screenshots/**/*"
+#    - "malts-theme/test/e2e/cypress/TestReport/**/*"
+#    - "malts-theme/test/e2ecypress-tests-report.json"
+#  discard-paths: no
+#  name: artifactCheck.zip
