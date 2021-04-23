@@ -23,6 +23,7 @@ phases:
           # Get Chrome Information
                         echo Installing Chrome stable
                         curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+                        echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
                         apt-get -y update
                       # Install chrome
                         apt-get -y install google-chrome-stable
@@ -41,12 +42,12 @@ phases:
 #      -"TestReport/cypress-tests-report.html"
 #      -"cypress-tests-result.json"
 #    file-format: CucumberJson
-#    base-directory: "malts-theme/test/e2e/cypress/"
-#artifacts:
-#  base-directory: .
-#  files:
-#    - "malts-theme/test/e2e/cypress/screenshots/**/*"
-#    - "malts-theme/test/e2e/cypress/TestReport/**/*"
-#    - "malts-theme/test/e2ecypress-tests-report.json"
-#  discard-paths: no
-#  name: artifactCheck.zip
+#    base-directory: "malts-theme/test/e2e/cypress/
+artifacts:
+  base-directory: ./
+  files:
+    - "malts-theme/test/e2e/cypress/screenshots/**/*"
+    - "malts-theme/test/e2e/TestReport/**/*"
+    - "malts-theme/test/e2e/cypress-tests-report.json"
+  discard-paths: no
+  name: "artifactCheck"
