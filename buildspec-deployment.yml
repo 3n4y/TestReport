@@ -43,7 +43,7 @@ phases:
 #    file-format: CucumberJson
 #    base-directory: "malts-theme/test/e2e/cypress/
 artifacts:
-  base-directory: ./
+  base-directory: .
   files:
     - "malts-theme/test/e2e/cypress/screenshots/**/*"
     - "malts-theme/test/e2e/TestReport/**/*"
