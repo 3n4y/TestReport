@@ -30,7 +30,6 @@ phases:
                       # Installation of all required packages.
           npm install -g yarn
           yarn install
-          npx cypress install --force #This is only useful in the local environment debugging
           npx wait-on http://${BUCKET}.s3-website-eu-west-1.amazonaws.com/${REGION}/
           echo Running e2e tests
           npm run e2e
