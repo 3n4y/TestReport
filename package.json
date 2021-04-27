@@ -1,0 +1,54 @@
+{
+  "private": true,
+  "workspaces": [
+    "malts-theme",
+    "malts-en-gb",
+    "malts-en-us",
+    "malts-en-au",
+    "malts-en-row",
+    "malts-de-de"
+  ],
+  "scripts": {
+    "heroku-postbuild": "mkdir -p backend/public && yarn global add gatsby-cli && yarn workspace malts-en-gb build && cp -r malts-en-gb/public backend/public/en-gb && yarn workspace malts-de-de build && cp -r malts-de-de/public backend/public/de-de",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "e2e": "npm run clean:reports && cypress run --project malts-theme/test/e2e --browser chrome;  npm run generate:html:report",
+    "cypress:openUI": "cd malts-theme/test/e2e && cypress open --config watchForFileChanges=false",
+    "clean:reports": "rm -rf malts-theme/test/e2e/mochawesome-report/",
+    "merge:reports": "mochawesome-merge malts-theme/test/e2e/mochawesome-report/*.json > malts-theme/test/e2e/cypress-tests-report.json",
+    "create:html:report": "marge --reportDir malts-theme/test/e2e/TestReport malts-theme/test/e2e/cypress-tests-report.json",
+    "generate:html:report": "npm run merge:reports && npm run create:html:report"
+  },
+  "name": "malts.com",
+  "description": "Malts.com",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.2",
+    "babel-jest": "^26.3.0",
+    "cypress": "^6.6.0",
+    "cypress-repeat": "^2.2.1",
+    "cypress-wait-until": "^1.7.1",
+    "cypress-xpath": "^1.6.1",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "dependencies": {
+    "cypress-commands": "^1.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "wait-on": "^5.3.0"
+  }
+}

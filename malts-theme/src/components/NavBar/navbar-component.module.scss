@@ -1,0 +1,190 @@
+@import "../../styles/variables";
+
+.siteHeader{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.siteNavbar {
+    background-color: white;
+    padding: 0px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.16);
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    margin: 0.1rem;
+    color: $color-primary;
+    &:hover{
+        color: $color-accent;
+    }
+    text-decoration: none;
+}
+
+.maltslogo {
+    padding:0px;
+    margin-left: 20px !important;
+    width: 162px;
+    height: 50px;
+    display: block;
+    z-index: 99999;
+    background:url(./../../images/malts-logo.svg) no-repeat;
+    transition: background-image .5s ease;
+    &:hover{
+        background:url(./../../images/malts-logo-hover.svg) no-repeat;
+    }
+}
+
+.menu-link {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 0.9rem !important;
+    padding-left: 0.9rem !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 100px;
+    white-space:nowrap;
+    color: $color-primary !important;
+    &:hover{
+        color: $color-accent !important;
+    }
+    text-decoration: none;
+    &.nav-link {
+        position: relative;
+    }
+}
+
+.fullWidthMenu{
+    border-radius: 0;
+    border: none;
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 0px solid #d3d3d3;
+    width: 100%;
+    transition: height 1.2s;
+    margin-top: -37px !important;
+    padding-top: 37px;
+    z-index: -1;
+}
+
+.fullWidthMenu > div{
+    border-top: 1px solid #d3d3d3;
+}
+
+.brandMenuRow {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subNavHolder {
+    align-items: auto !important;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.groupCaption {
+    font-weight: 900;
+    font-size: 1em;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    margin-left: 0px;
+}
+
+.groupCaptionLink {
+    font-weight: 900;
+    font-size: 1em;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+.brandMenuRow {
+    flex-direction: row;
+}
+
+@media (max-width: 991px) {
+    .groupCaptionLink {
+        font-weight: 900;
+        font-size: 1em;
+        margin-bottom: 12px;
+        margin-left: 12px;
+        margin-top: 6px;
+        color: $color-text !important;
+    }
+    .menu-list .title{
+        margin-top: 12px
+    }
+    .subNavHolder {
+        flex-direction: column;
+        &.brandMenuRow {
+            flex-direction: row;
+        }
+    }
+}
+
+.menu-list ul{
+    list-style-type: none;
+    padding: 5px;
+}
+
+.menu-list li{
+    font-size: 1em;
+    line-height: 1;
+    margin-bottom: 10px;
+    a{
+        text-decoration: none;
+    }
+}
+
+.menu-list .title{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-text !important
+}
+
+.menu-list a .title{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-primary !important
+}
+
+.toolBar {
+    flex-direction: row;
+    margin: auto 20px auto 0;
+    height: 30px;
+    line-height: 25px;
+    z-index: 9995;
+}
+
+.logomobile {
+    padding: 0px;
+    margin-left: 115px;
+    margin-top: 0px;
+    height: 50px;
+    width: 50px;
+}
+
+.logodesktop {
+    margin-left: 20px;
+    height: 50px;
+    width: 162px;
+    z-index: 999;
+    &:hover svg * {
+        fill: $color-accent !important
+    }
+}
+
+// Don't ask
+@media (max-width: 1090px) {
+    .gifts-menu{
+        display:none;
+    }
+}
+
+.hover-controlled-dropdown {
+    position: inherit;
+}

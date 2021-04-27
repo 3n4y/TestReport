@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+
+.contestMessage {
+  font-size: .85em;
+  line-height: 1;
+  display: block;
+  color: #EC8459;;
+}
+
+.contestDisclaimer {
+  font-size: 0.7em;
+  line-height: 1;
+  display: block;
+  color:#EC8459;;
+}
+
+.contestMessage label input {
+  margin-right:5px;
+}
+
+.contestMessage input[type="checkbox"]:after {
+  content: normal;
+}
+

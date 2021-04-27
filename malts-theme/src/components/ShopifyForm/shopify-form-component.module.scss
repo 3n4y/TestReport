@@ -1,0 +1,156 @@
+@import "../../styles/variables";
+
+
+.price {
+	color: #1F5B5E;
+	font-weight: bold;
+}
+
+.price-previous{
+	font-size: 1em;
+	text-decoration: line-through;
+	color: #1F5B5E;
+	font-weight: normal;
+}
+
+.price,
+.price-previous {
+	font-size: 1em;
+	margin: 0;
+	line-height: 1.1;
+	text-align: right;
+}
+
+.onsale {
+	font-size: 1em;
+	margin: 0;
+	line-height: 1.1;
+	text-align: right;
+}
+
+.unavailable {
+	margin: 0;
+	line-height: 1.1;
+	font-size: 1em;
+	text-align: right;
+}
+
+.productOption {
+  margin-right: 10px;
+}
+
+.productOptions {
+  h4 {
+    margin-bottom: 0;
+  }
+  label {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+  }
+  & label:first-child {
+    padding-left: initial;
+  }
+
+}
+
+.dividerBlock {
+  width: 40px;
+  margin: 6px 6px 6px 0;
+  border: 3px solid #182A3A;
+}
+
+@media (max-width: 768px) {
+  .dividerBlock {
+      margin: 6px auto !important;
+  }
+}
+
+button.addtocart {
+	margin: 0 20px;
+}
+@media (max-width:786px) {
+	button.addtocart {
+		margin: 0 0 0 10px;
+		padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+	}
+}
+p.deliveryNote{
+	font-size: 1em;
+	text-align: left;
+	margin-top: 10px;
+}
+
+div.preorderMessage {
+	font-size: 1em;
+	text-align: left;
+	line-height: 1;
+	background: $color-gray;
+	display: inline-block;
+}
+
+span.limitedtimeofferNote,
+p.deliveryNote,
+div[class*="tileAddToCart"] {
+	display:none !important
+}
+
+div[class*="product-page-module"] {
+	span.limitedtimeofferNote,
+	p.deliveryNote,
+	div[class*="tileAddToCart"] {
+		display:block !important
+	}
+	.price,
+	.price-previous {
+		font-size: 1.5rem;
+		margin-top:20px;
+		text-align: left;
+	}
+	.onsale {
+		margin: 0;
+		line-height: 1.1;
+		text-align: left;
+	}
+	.unavailable {
+		margin: 0;
+		line-height: 1.1;
+		text-align: left;
+	}
+}
+
+// Mobile
+@media (max-width: 768px) {
+
+	.price,
+	.price-previous,
+	.onsale,
+	.unavailable{
+		text-align: center;
+	}
+	.form-add-to-cart{
+		border-top: 1px solid silver;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #FFF;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+	}
+	div[class*="product-page-module"] {
+		span.limitedtimeofferNote,
+		p.deliveryNote,
+		.price,
+		.price-previous,
+		.onsale,
+		.unavailable {
+			text-align: center;
+			color: $color-text;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+@import "../styles/variables";
+.welcome {
+  background: url('https://maltsglobal.diageoplatform.com/images/signup-background.jpg') no-repeat center top;
+}
+
+.centre-box {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 3px;
+    max-width: 90%;
+    margin: 20px auto;
+    overflow: auto;
+    text-align: center;
+}
+
+.close-btn {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    opacity: 0.3;
+    font-size: 1em;
+  }
+
+.close-btn:before, .close-btn:after {
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    width: 2px;
+    content: "\2715";
+    font-size: 1em;
+}

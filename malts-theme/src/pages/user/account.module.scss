@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+.icon{
+    width: 24px;
+    height: 24px;
+    margin: 0.1rem;
+
+    color: $color-text;
+    :hover{
+        color: $color-accent;
+    }
+    text-decoration: none;
+
+}
+
+.profileModal{
+    padding:10px;
+    div{
+        border: none;
+    }
+}
+
+.profileModalContent{
+    border:none;
+    background: #fff;
+    min-height:500px;
+}
+
+.profileModalHeader{
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.profileModalBody{
+    padding: 20px;
+    text-align:center;
+    min-height:250px;
+}
+
+.profileModalClose{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 3px 7px;
+    border-radius: 50px;
+    font-size: 33px;
+    padding-bottom: 8px;
+}
+
+.profileModalForm{
+    text-align:left;
+}
+
+.profileModalMessage{
+    padding-bottom:10px;
+}
+
+.profileModalBody label input {
+    margin-right:5px;
+    text-align:left;
+  }
+
+.profileModalBody input[type="checkbox"]:after {
+    content: normal;
+    text-align:left;
+  }
+
+.profileModalButton{
+    margin:20px;
+}

@@ -1,0 +1,11 @@
+.threedium-modal{
+  width: 90vw ;
+  max-width: 90vw;
+}
+
+@media (max-width: 768px) {
+  .threedium-modal{
+    width: 100%;
+    max-width: 100%;
+  }
+}

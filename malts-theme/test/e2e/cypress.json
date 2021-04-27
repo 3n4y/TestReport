@@ -1,0 +1,20 @@
+{
+  "fixturesFolder": "cypress/fixtures",
+  "integrationFolder": "cypress/integration",
+  "pluginsFile": "cypress/plugins/index.js",
+  "screenshotsFolder": "cypress/screenshots",
+  "videosFolder": "cypress/videos",
+  "supportFile": "cypress/support/index.js",
+  "baseUrl": "http://pr1841stg.s3-website-eu-west-1.amazonaws.com",
+  "viewportWidth": 1280,
+  "viewportHeight": 800,
+  "videoUploadOnPasses": false,
+  "video": false,
+  "chromeWebSecurity": false,
+  "reporter": "../../../node_modules/mochawesome/src/mochawesome.js",
+  "reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+}

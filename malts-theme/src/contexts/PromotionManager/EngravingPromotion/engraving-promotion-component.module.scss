@@ -1,0 +1,628 @@
+.launchButton {
+  margin-bottom:0.5em;
+}
+
+.footerCloseButton {
+  display: none;
+}
+
+.modalHeader {
+  color:#1F5B5E;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+}
+
+.inputsContainer {
+  background-color: #fff;
+  padding: 0;
+}
+
+.textInput {
+  width: 2.4em;
+  font-size: 20px;
+  border: none;
+  color:#1F5B5E;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.textInput#Initial_3 {
+  margin-right:0
+}
+
+@media (max-width: 768px) {
+  .previewImage,
+  .previewControls {
+    max-width: 100%;
+    flex: none;
+  }
+}
+
+.previewImage {
+  display: grid;
+  justify-items: center;
+  border: 1px solid #eaeaea;
+  background-size: 160%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+}
+
+.modalDisclaimer{
+  font-size: 12px;
+  width: 100%;
+  background: #ffffff99;
+  position: absolute;
+  bottom: 0;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.previewTextContainer {
+  display: grid;
+  font-family: Times !important;
+  lighting-color: #ccc;
+  position: absolute;
+  position: absolute;
+  bottom: 35%;
+}
+
+.previewText {
+  font-family: 'Times New Roman' !important;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0.7;
+  user-select: none;
+  color: #fff;
+  text-shadow: -1px 0px 2px rgba(0, 0, 0, .25), 1px 0px 2px rgba(0, 0, 0, .25);
+  white-space: nowrap;
+  font-size: var(--personalization-font-size);
+}
+
+.presetMessageSelect {
+  border: none;
+  color:#1F5B5E;
+}
+
+.inputRow {
+  justify-content: space-evenly;
+  padding: 0.5em;
+}
+
+.engravingOption {
+  background-color: #F5F5F5;
+  border: 1px solid #1F5B5D;
+  padding: 30px 0;
+  color: grey;
+  margin: 0 0 25px 0;
+  label{
+    padding-top: 0px;
+    text-align: left;
+  }
+}
+
+.inputRowInactive {
+  opacity: .4;
+  border: none;
+  input, select {
+    background-color: #fff;
+  }
+}
+
+.inputLabel {
+  color: #707070;
+  padding: 0;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
+.inputErrors {
+  color: red;
+}
+
+.engravingModal{
+  max-width: 1130px;
+  width: 1130px;
+  padding: 21px;
+  background: #fff;
+
+  div{
+    border: none;
+  }
+  .engravingOption, .previewImage {
+    border: 1px solid #1F5B5D;
+  }
+  .inputRowInactive {
+    border:none;
+  }
+}
+
+.engravingModalContent{
+  border:none;
+}
+
+
+.modalClose{
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  padding: 3px 7px;
+  border-radius: 50px;
+  font-size: 33px;
+  padding-bottom: 8px;
+}
+
+.engravingModalBody{
+  padding: 0px;
+}
+
+.engravingCheckbox{
+  float: left;
+  margin-top: 10px;
+}
+
+.engravingCheckbox[type="checkbox"]::after{
+  line-height: 20px;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left:12px;
+  top: 5px;
+  background-color: #ffffff;
+  border: 1px solid #1F5B5D;
+}
+
+.engravingCheckbox[type="checkbox"]:checked::after{
+  content: "\2713";
+  color: #1F5B5D;
+  text-align: center;
+  line-height: 16px;
+}
+
+.engravingCheckboxLabel{
+  width: 95%;
+  float: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 3px;
+  text-align: left;
+}
+
+.engravingSubmit{
+  margin-left: 10px;
+}
+
+.engravingFinal{
+  margin: 10px 0 15px;
+}
+
+.tileTitleContainer{
+  max-width: 100%;
+  width: 100%;
+  float: left;
+  margin: 0 auto;
+}
+
+.tileTitlePersonalize{
+  background: #F09A6D;
+  color: #fff;
+  margin-left: 15px;
+  line-height: 18px;
+  padding: 5px;
+  opacity: 0.9;
+  text-align: center;
+  display: table;
+  font-size: 14px;
+  margin-top: -15px;
+  margin-bottom: 5px;
+
+  @media (max-width: 768px){
+    margin-top: -15px;
+    justify-content: center;
+  }
+}
+
+.tileTitlePersonalize:hover{
+  color: #fff;
+}
+
+@media(max-width: 1150px) and (min-width: 768px){
+  .engravingModal{
+    width: 85%;
+  }
+}
+
+@media(max-width: 1150px) and (min-width: 1100px){
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * 0.85);
+  }
+}
+
+@media(max-width: 1099px) and (min-width: 950px){
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * 0.75);
+  }
+}
+
+@media(max-width: 949px) and (min-width: 769px){
+  .previewImage{
+    max-height: 50vw;
+  }
+
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * .8);
+  }
+
+  .engravingOption{
+    label{
+      font-size: 14px;
+    }
+
+    .textInput{
+      width: 2em;
+      font-size: 14px;
+    }
+  }
+
+}
+
+@media(max-width: 768px){
+  .engravingModal{
+    width: 95%;
+    text-align: center;
+  }
+
+  .modalHeader {
+    margin-top: 20px;
+  }
+
+  .modalClose{
+    top: -30px;
+    right: -33px;
+  }
+
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * 0.95);
+  }
+
+  .previewImage{
+    height: 90vw;
+    max-height: 90%;
+    background-size: 160%;
+  }
+
+  .inputsContainer{
+    padding: 0;
+  }
+
+  .engravingCheckboxWrapper{
+    width: 20px;
+  }
+
+  .engravingCheckbox[type="checkbox"]::after{
+    left: 0;
+  }
+
+  .engravingSubmit{
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .engravingOptionSelect{
+    label{
+      display: none;
+    }
+
+    .heartInputLabel{
+      display: block;
+      width: 70%;
+      text-align: left;
+    }
+
+    .presetMessageSelect{
+      width: 75%;
+      padding: 5px 0;
+    }
+  }
+
+  .tileTitlePersonalize{
+    margin-top: 0;
+    width: calc(100% - 30px);
+  }
+
+}
+
+@media(max-width: 600px){
+  .previewImage{
+    height: 90vw;
+  }
+
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * 0.8);
+  }
+
+  .modalHeader{
+    font-size: 19px;
+  }
+
+  .modalDisclaimer{
+    bottom: 0px;
+  }
+
+  .modalHeader{
+    margin-top: 30px;
+  }
+
+  .textInput{
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1.1em;
+    margin-top: 5px;
+  }
+
+  .engravingOption{
+    label{
+      font-size: 14px;
+      text-align:left;
+    }
+  }
+
+  .engravingCheckboxLabel{
+    width: 93%;
+  }
+
+}
+
+@media (max-width: 450px){
+
+  .previewText {
+    font-size: calc(var(--personalization-font-size) * 0.55);
+  }
+
+  .textInput{
+    -webkit-appearance: none;
+    border-radius: none;
+    font-size: 14px;
+    width: 30px;
+    height: 25px;
+  }
+
+}
+
+@import "../../../styles/variables";
+
+.tile{
+  /*width: 250px;
+  max-width: 250px;
+  */
+  margin: 0;
+  position: relative;
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  > a {
+    display: block;
+  }
+}
+
+.tile-image {
+  margin: 15px;
+  width:auto;
+}
+
+@media (max-width: 768px) {
+  .tile-image {
+  }
+}
+
+#storefront .tile-image {
+  margin: 15px 0;
+  height: calc(25vw - 30px);
+  min-height: 327px;
+  width:auto;
+}
+
+.tile-image {
+    .gatsby-image-wrapper {
+        padding-bottom: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tile-image {
+    margin: 0px auto;
+    min-height: 127px !important;
+    max-width: calc(100% - 10px) !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .storeProducts .tile-image {
+    height: calc(50vw - 30px) !important;
+  }
+}
+.tile-image img {
+  border: 1px solid #dedede;
+  padding: 15px;
+}
+
+.tile-title {
+  color: $color-primary;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.tile-price {
+  color: #182A3A;
+  font-weight: bold;
+}
+
+.tileTitleContainer {
+  width: 100% !important;
+  float:left;
+  .tile-title,
+  .tile-price {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .tileTitleContainer {
+    .tile-title,
+    .tile-price {
+      text-align: center;
+    }
+  }
+}
+
+.qs-container {
+  opacity:0;
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  background: rgba(0,0,0,0);
+  a{
+    width: calc(100% - 30px);
+      /*max-width: 210px;*/
+    margin: auto;
+    position: absolute;
+    bottom: -15px;
+    left: 15px;
+    font-weight: 100;
+  }
+  button {
+    width: calc(100% - 30px);
+      /*max-width: 210px;*/
+    margin: auto;
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    font-weight: 100;
+  }
+}
+
+.qs-container {
+  button {
+  }
+  &:hover {
+    opacity:0.90;
+  }
+}
+
+.popupTile {
+  position: relative;
+  top: 0 !important;
+  left: 0;
+  height: 100%;
+  width: 100%
+}
+.popupLink {
+  position: relative;
+  margin-top: -50%
+}
+
+.qs-container-modal {
+  opacity:0.99;
+  display:none;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  position: fixed;
+  z-index:100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.25);
+
+  .qs-component {
+    border: 1px solid white;
+    padding: 20px;
+    max-width: 50%;
+    background: #fff;
+  }
+}
+
+.learnMore {
+  top: 150px !important
+}
+
+.engravingOptionSelect{
+
+  .messageWrap{
+    width: 100%;
+    margin: 0;
+  }
+
+  label{
+    width: 20%;
+  }
+
+  select{
+    width: 75%;
+    padding: 5px 0;
+  }
+}
+
+.heartInitialForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  display:flex;
+}
+
+.heartInputLabel {
+  padding: 0;
+  margin: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  input{
+    margin-right: 5px;
+  }
+}
+
+.heartCheckboxWrapper{
+  margin: 10px 0 0;
+  width: 100%;
+
+  input{
+    width: 14px;
+  }
+
+  label{
+    width: 90%;
+  }
+}
+
+.heartCheckbox{
+  position: relative;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.heartCheckbox:checked::after{
+  content: "\2713";
+  color: #1F5B5D;
+  text-align: center;
+  line-height: 12px;
+  background: #fff;
+}

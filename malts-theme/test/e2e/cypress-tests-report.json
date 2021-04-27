@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 0,
+    "pending": 0,
+    "failures": 6,
+    "start": "2021-04-27T14:52:47.693Z",
+    "end": "2021-04-27T14:53:40.237Z",
+    "duration": 52377,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4a261052-77c3-4de1-8456-1b50f7610e88",
+      "title": "",
+      "fullFile": "cypress/integration/test/AgeVerificationTest.spec.js",
+      "file": "cypress/integration/test/AgeVerificationTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+          "title": "When the access page is loaded",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be possible to close the cookie dialog",
+              "fullTitle": "When the access page is loaded should be possible to close the cookie dialog",
+              "timedOut": null,
+              "duration": 1336,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://maltsglobal.diageoplatform.com/en-gb/');\ncy.clearCookie('diageo-gateway').should('be.null');\ncy.clearCookie('ag-sso').should('be.null');\ncy.clearCookie('OptanonAlertBoxClosed').should('be.null');\nvar dialog = new CookiesDialog();\ndialog.closeDialog();\ncy.xpath(dialog.xpathForDialog()).should('not.be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://maltsglobal.diageoplatform.com/en-gb/\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://maltsglobal.diageoplatform.com/en-gb/\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:159119:25\n    at visitFailedByErr (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:158495:12)\n    at http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:159099:13\n    at tryCatcher (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:10765:23)\n    at Promise._settlePromiseFromHandler (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:8700:31)\n    at Promise._settlePromise (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:8757:18)\n    at Promise._settlePromise0 (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:8802:10)\n    at Promise._settlePromises (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:8878:18)\n    at _drainQueueStep (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:5472:12)\n    at _drainQueue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:5465:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:5481:5)\n    at Async.drainQueues (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/runner/cypress_runner.js:5351:14)\nFrom Your Spec Code:\n    at Context.eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:173:8)",
+                "diff": null
+              },
+              "uuid": "cc35a7d9-5d8f-40cc-a8ae-665bc24ca201",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "country field is visible",
+              "fullTitle": "When the access page is loaded country field is visible",
+              "timedOut": null,
+              "duration": 10238,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var dobDialog = new DobDialog();\ncy.xpath(dobDialog.xpathForLocation()).should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.\n    at eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:350:10)\n    at resolveValue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1544:20)\n    at Context.waitUntil (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1554:10)",
+                "diff": null
+              },
+              "uuid": "8f258fc2-8f35-4883-829f-2606075337a6",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should not be able to submit a blank age form",
+              "fullTitle": "When the access page is loaded should not be able to submit a blank age form",
+              "timedOut": null,
+              "duration": 10239,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var dobDialog = new DobDialog();\ndobDialog.clickEnter(); // check if error exist and check error message is correct\nvar error = dobDialog.getError();\nerror.should('be.visible');\nerror.should('contain', 'Please enter your date of birth');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.\n    at eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:350:10)\n    at resolveValue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1544:20)\n    at Context.waitUntil (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1554:10)",
+                "diff": null
+              },
+              "uuid": "ff73030d-b79c-4e8b-acc7-01ccde7a2fbb",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should not be able to enter a wrong date",
+              "fullTitle": "When the access page is loaded should not be able to enter a wrong date",
+              "timedOut": null,
+              "duration": 10190,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var wrongDate = new Date(2000, 2, 31);\nvar dobDialog = new DobDialog();\ndobDialog.selectDate(wrongDate);\ndobDialog.clickEnter(); // check if error exist and check error message is correct\nvar error = dobDialog.getError();\nerror.should('be.visible');\nerror.should('contain', 'Sorry, please enter a valid date');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.\n    at eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:350:10)\n    at resolveValue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1544:20)\n    at Context.waitUntil (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1554:10)",
+                "diff": null
+              },
+              "uuid": "340a8526-7267-4999-b801-3f73db001e63",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "will not be given access with age below 19 years",
+              "fullTitle": "When the access page is loaded will not be given access with age below 19 years",
+              "timedOut": null,
+              "duration": 10173,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var underAge = Math.floor(Math.random() * (minLegalAge - minDialogAge) + minDialogAge);\nvar dob = date.setFullYear(date.getFullYear() - underAge); // sets dob year to underage\nvar dobDialog = new DobDialog();\ndobDialog.selectDate(dob);\ndobDialog.clickEnter(); // check if error exist and check error message is correct\nvar error = dobDialog.getError();\nerror.should('be.visible');\nerror.should('contain', 'Sorry, your age or location does not permit you to enter at this time.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.\n    at eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:350:10)\n    at resolveValue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1544:20)\n    at Context.waitUntil (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1554:10)",
+                "diff": null
+              },
+              "uuid": "7c7afcf2-50f0-4c6b-a486-ba97eebf6e4c",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "will be given access with age above 19 years",
+              "fullTitle": "When the access page is loaded will be given access with age above 19 years",
+              "timedOut": null,
+              "duration": 10201,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var legalAge = Math.floor(Math.random() * (maxDialogAge - minLegalAge) + minLegalAge);\nvar dob = date.setFullYear(date.getFullYear() - legalAge); // sets dob year to legal age\nvar dobDialog = new DobDialog();\ndobDialog.selectDate(dob);\ndobDialog.clickEnter();\nvar error = dobDialog.getError();\nerror.should('not.be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//*[@id=\"age_content\"]`, but never found it.\n    at eval (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/integration/test/AgeVerificationTest.spec.js:350:10)\n    at resolveValue (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1544:20)\n    at Context.waitUntil (http://pr1841stg.s3-website-eu-west-1.amazonaws.com/__cypress/tests?p=cypress/support/index.js:1554:10)",
+                "diff": null
+              },
+              "uuid": "a9c3b5f7-61b7-40af-bdd9-63672b5fb3bb",
+              "parentUUID": "e102f861-d9d0-4bc0-9908-bb9bf3857d28",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cc35a7d9-5d8f-40cc-a8ae-665bc24ca201",
+            "8f258fc2-8f35-4883-829f-2606075337a6",
+            "ff73030d-b79c-4e8b-acc7-01ccde7a2fbb",
+            "340a8526-7267-4999-b801-3f73db001e63",
+            "7c7afcf2-50f0-4c6b-a486-ba97eebf6e4c",
+            "a9c3b5f7-61b7-40af-bdd9-63672b5fb3bb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 52377,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

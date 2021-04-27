@@ -1,0 +1,58 @@
+@import "../../../styles/variables";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0 1rem 0;
+  border-bottom: 1px solid #dedede
+}
+
+.productTitle {
+  line-height: 120%;
+  display: block;
+}
+
+.productOptions {
+  font-size: .7em;
+  display: block;
+}
+
+.customAttributes {
+  font-size: .7em;
+  display: block;
+}
+
+.productPrice {
+  font-size: 1em;
+  line-height: 1.8;
+  display: block;
+  text-align: right;
+}
+
+.productPreviousPrice{
+  text-decoration: line-through;
+  line-height: 1;
+  font-size: 1em;
+  line-height: 1;
+  display: block;
+  text-align: right;
+}
+
+.productNote {
+  font-size: 0.85em;
+  line-height: 1;
+  display: block;
+  text-align: left;
+  color: $color-accent;
+}
+
+.removeItem {
+  padding: 5px !important;
+  margin: 0px !important;
+  width: 24px;
+  height: 24px;
+  line-height: 6px;
+  border-radius: 12px;
+}

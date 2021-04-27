@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+.nav-bar{
+    color: $color-text;
+    min-height: 48px;
+}
+
+.nav-link{ 
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 600;
+    padding-right: 1.1rem !important;
+    padding-left: 1.1rem !important;
+    
+    color: $color-primary ;
+    &:hover{
+        color: $color-accent ;
+    }
+    text-decoration: none; 
+}
+
+@media(max-width: 768px){
+    .nav-container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-link{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

@@ -1,0 +1,66 @@
+.slickDotsV {
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    bottom: unset;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    left: 50%;
+    pointer-events: none;
+}
+.slickDotsV li {
+    position: relative;
+    pointer-events: all;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin: 5px 0 5px auto;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.slickDotsV li button {
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    padding: 2px;
+    cursor: pointer;
+    color: white;
+    border: 0;
+    outline: none;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.slickDotsV li.slick-active button {
+    width: 20px !important;
+    height: 20px;
+    padding: 10px;
+    margin-left: -8px;
+    background: transparent
+}
+
+.hero-container{
+    min-height: 375px;
+    height: 375px;
+    overflow: hidden;
+}
+
+.verticalslider {
+    .hero-container{
+        min-height: 450px;
+        height: 450px;
+        overflow: hidden;
+    }
+}
+

@@ -1,0 +1,15 @@
+.captionBlock {
+    margin: 30px 10px;
+    * {
+        text-align: center
+    }
+    p {
+        white-space: pre-line
+    }
+}
+
+@media (max-width: 768px) {
+    .captionBlock {
+        margin: 10px
+    }
+}

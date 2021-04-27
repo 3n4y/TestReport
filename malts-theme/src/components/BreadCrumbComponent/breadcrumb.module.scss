@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+
+
+.breadcrumb-container{
+    text-align: left;
+    margin-left: 0px;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    justify-content: left !important;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    font-size: 1em !important;
+    color:$color-primary;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-container{
+        font-size: 12px !important;
+    }
+}
+
+.breadcrumb-link{
+    &:hover{
+        cursor: pointer;
+        background-color: transparent !important;
+        text-decoration: none;
+        color: $color-accent !important;
+    } 
+}
+
+.breadcrumb-current{
+    color:$color-accent;
+    display: inline-block
+}

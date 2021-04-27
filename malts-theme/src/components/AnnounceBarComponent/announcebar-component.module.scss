@@ -1,0 +1,22 @@
+.announce-bar{
+    
+    font-size: 0.7em;
+    font-weight: 400;
+    background-color: #e5e5e5;  
+    text-align: center;
+    align-items: center;
+    justify-content: center;  
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -0.7rem;
+    >p{
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        font-size: inherit
+    }
+}
+
+.announce-bar-background{    
+    background-color: #e5e5e5;      
+}

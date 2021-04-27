@@ -1,0 +1,113 @@
+@import "../../styles/variables";
+
+.icon{
+    width: 24px;
+    height: 24px;
+    margin: 0.1rem;
+
+    color: $color-primary;
+    :hover{
+        color: $color-accent;
+    }
+    text-decoration: none;
+}
+
+#header-wrapper {
+    width: 100vw;
+    height: 80px;
+    background-color: navy;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#toggle {
+    cursor: pointer;
+    color: #182A3A;
+    background: transparent;
+    border: none;
+    padding: 20px 10px 0;
+    font-size: 20px;
+}
+
+.cartDrawer {
+    height: calc(100vh - 100px);
+    padding: 20px;
+    background-color: #fff;
+    opacity: 1;
+    color: #182A3A;
+    width: 95%;
+    max-width: 360px;
+    position: fixed;
+    top: 100px;
+    z-index: 200;
+    right: -100%;
+    animation: slide-open .5s forwards;
+    box-shadow: -5px 4px 5px rgba(0, 0, 0, 0.3);
+    overflow: scroll;
+    .fullwidth {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .cartDrawer {
+        top: 50px;
+    }
+}
+
+.cartDrawerHidden {
+    display:none;
+    right: -100%;
+    animation: slide-closed 1s forwards
+}
+
+@keyframes slide-open {
+    100% {right: 0}
+}
+@keyframes slide-closed {
+    100% {right: -100%}
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.qtyCart {
+    background: #EC8459;
+    color: #fff;
+    border-radius: 8px;
+    height: 16px;
+    min-width: 16px;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    margin-left: -16px;
+    user-select: none;
+    cursor: default;
+}
+
+.updating {
+    color: grey;
+}
+p.back_arrow_before {
+    color: $color-primary;
+    cursor: pointer;
+}
+p.back_arrow_before::before {
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    top: -1px;
+    height: 8px;
+    width: 8px;
+    content:"";
+    background: url(../../images/down-arrow.svg) no-repeat;
+    transform: rotate(90deg);
+    margin-right: 5px
+}

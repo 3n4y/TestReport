@@ -1,0 +1,95 @@
+
+* {font-family: 'Muli', sans-serif !important}
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+    font-weight: bold;
+    white-space: normal;
+    padding-bottom: 1rem;
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+    font-weight: semi-bold;
+    white-space: normal;
+}
+
+
+h1, .h1 {
+	text-transform: uppercase;
+	font-size: 30px;
+  line-height: 48px;
+  font-weight: 900;
+}
+
+h2, .h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+h3, .h3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+h4, .h4 {
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;  
+}
+
+h5, .h5 {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+h6, .h6 {
+	text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+p {
+    color: #182A3A;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.font-weight-bold,
+.font-weight-bold * {
+  font-weight: 900 !important
+}
+.jumbotron {
+  * {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  h1, .h1 {
+    font-size: 56px;
+    line-height: 48px;
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 34px;
+    }
+  }
+
+}
+
+h2, .h2 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 900;
+}
+
+h3, .h3 {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 900;
+}

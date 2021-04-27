@@ -1,0 +1,36 @@
+.launchButton {
+  margin-bottom:0.5em;
+}
+
+.signupButton {
+  margin-bottom:0.5em;
+  margin-top: 1em;
+  text-align:center;
+}
+
+.signupModal{
+  padding:10px;
+  div{
+    border: none;
+  }
+}
+
+.signupModalContent{
+  border:none;
+  background: #fff;
+}
+
+.signupModalBody{
+  padding: 20px;
+  text-align:center;
+}
+
+.signupModalClose{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  padding: 3px 7px;
+  border-radius: 50px;
+  font-size: 33px;
+  padding-bottom: 8px;
+}

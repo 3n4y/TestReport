@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+.footer-link {  
+    font-size: 14px !important; 
+    text-transform: none;
+    margin: 0 auto;
+    text-decoration: none;
+    color: $color-primary;
+    :hover{
+        color: $color-accent !important;
+    };
+    &:hover{
+        color: $color-accent !important;
+    };
+}
+
+.footer-text{   
+    font-size: 14px; 
+    text-transform: none;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+    color: $color-text !important;
+    width: 100%;
+}
+

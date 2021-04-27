@@ -1,0 +1,30 @@
+.titleComponent {
+    padding-top: 60px !important;
+    padding-bottom: 30px !important;
+    width: 720px;
+    max-width: 75%
+}
+
+.titleComponent h2,
+.titleComponent p {
+    text-align: center;
+}
+
+.titleComponent h2 {
+    padding-bottom: 0
+}
+
+@media (max-width: 768px) {
+    .titleComponent {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        width: auto;
+        max-width: 90%;
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    } 
+}
