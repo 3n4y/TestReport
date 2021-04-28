@@ -34,14 +34,12 @@ phases:
           echo Running e2e tests
           npm run e2e
         fi
-#reports:
-#  cypress-report-group: #cypress e2e reports
-#    files:
-#      -"screenshots/**/*"
-#      -"TestReport/cypress-tests-report.html"
-#      -"cypress-tests-result.json"
-#    file-format: CucumberJson
-#    base-directory: "malts-theme/test/e2e/cypress/
+reports:
+  cypress-report-group: cypress e2e reports
+    files:
+      - "cypress-tests-result.json"
+    file-format: CucumberJson
+    base-directory: "malts-theme/test/e2e/cypress/
 artifacts:
   base-directory: "./"
   files:
