@@ -49,4 +49,3 @@ artifacts:
     - "malts-theme/test/e2e/TestReport/**/*"
     - "malts-theme/test/e2e/cypress-tests-report.json"
   discard-paths: no
-  name: "artifactCheck"
