@@ -43,7 +43,6 @@ artifacts:
   base-directory: "./"
   files:
     - "malts-theme/test/e2e/cypress/screenshots/**/*"
-    - "malts-theme/test/e2e/TestReport/**/*"
-    - "malts-theme/test/e2e/cypress-tests-report.json"
+    - "malts-theme/test/e2e/cypress/results/html/TestReport/**/*"
   discard-paths: no
   name: "artifactCheck"
