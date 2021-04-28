@@ -8,13 +8,13 @@ env:
 phases:
   build:
     commands:
-#      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_GB_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN}/g" malts-${REGION}/public/app*.js
-#      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_DE_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN_DE}/g" malts-${REGION}/public/app*.js
-#      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_GB_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME}/g" malts-${REGION}/public/app*.js
-#      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_DE_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME_DE}/g" malts-${REGION}/public/app*.js
-#      - sed -i "s/REPLACE_THIS_WITH_ID_OF_CLIENT_FOR_AUTH0/${GATSBY_AUTH0_CLIENT_ID}/g" malts-${REGION}/public/app*.js
-#      - echo Starting S3 upload for ${REGION} the S3 bucket ${BUCKET}
-#      - aws s3 sync "malts-${REGION}/public/" "s3://${BUCKET}/${REGION}/"   --acl "public-read" --quiet
+  #      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_GB_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN}/g" malts-${REGION}/public/app*.js
+  #      - sed -i "s/REPLACE_THIS_WITH_TOKEN_TO_ACCESS_DE_SHOPIFY/${GATSBY_SHOPIFY_ACCESS_TOKEN_DE}/g" malts-${REGION}/public/app*.js
+  #      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_GB_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME}/g" malts-${REGION}/public/app*.js
+  #      - sed -i "s/REPLACE_THIS_WITH_DOMAIN_OF_DE_SHOPIFY_INSTANCE/${GATSBY_SHOP_NAME_DE}/g" malts-${REGION}/public/app*.js
+  #      - sed -i "s/REPLACE_THIS_WITH_ID_OF_CLIENT_FOR_AUTH0/${GATSBY_AUTH0_CLIENT_ID}/g" malts-${REGION}/public/app*.js
+  #      - echo Starting S3 upload for ${REGION} the S3 bucket ${BUCKET}
+  #      - aws s3 sync "malts-${REGION}/public/" "s3://${BUCKET}/${REGION}/"   --acl "public-read" --quiet
   post_build:
     commands:
       - | # Check region and only run for en-gb
@@ -35,11 +35,10 @@ phases:
           npm run e2e
         fi
 reports:
-  cypress-report-group: cypress e2e reports
+  cypress-report-group: #cypress e2e reports
     files:
-      - "cypress-tests-result.json"
-    file-format: CucumberJson
-    base-directory: "malts-theme/test/e2e/cypress/
+      - "./malts-theme/test/e2e/cypress-tests-report.json"
+    file-format: CUCUMBERJSON
 artifacts:
   base-directory: "./"
   files:
