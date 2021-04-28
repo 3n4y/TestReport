@@ -37,8 +37,8 @@ phases:
 reports:
   cypress-report-group: #cypress e2e reports
     files:
-      - "./malts-theme/test/e2e/cypress-tests-report.json"
-    file-format: CUCUMBERJSON
+      - "./malts-theme/test/e2e/cypress/results/xml/combined-report.xml"
+    file-format: JUNITXML
 artifacts:
   base-directory: "./"
   files:

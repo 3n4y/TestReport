@@ -13,12 +13,18 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "e2e": "npm run clean:reports && cypress run --project malts-theme/test/e2e --browser chrome;  npm run generate:html:report",
+    "e2e:old": "npm run clean:reports && cypress run --project malts-theme/test/e2e --browser chrome;  npm run generate:html:report",
     "cypress:openUI": "cd malts-theme/test/e2e && cypress open --config watchForFileChanges=false",
-    "clean:reports": "rm -rf malts-theme/test/e2e/mochawesome-report/",
-    "merge:reports": "mochawesome-merge malts-theme/test/e2e/mochawesome-report/*.json > malts-theme/test/e2e/cypress-tests-report.json",
-    "create:html:report": "marge --reportDir malts-theme/test/e2e/TestReport malts-theme/test/e2e/cypress-tests-report.json",
-    "generate:html:report": "npm run merge:reports && npm run create:html:report"
+    "clean:reports": "rm -rf malts-theme/test/e2e/cypress/results/html/",
+    "merge:reports": "mochawesome-merge malts-theme/test/e2e/cypress/results/html/*.json > malts-theme/test/e2e/cypress/results/html/cypress-tests-report.json",
+    "create:html:report": "marge --reportDir malts-theme/test/e2e/cypress/results/html/TestReport malts-theme/test/e2e/cypress/results/html/cypress-tests-report.json",
+    "generate:html:report": "npm run merge:reports && npm run create:html:report",
+    "delete:reports": "rm -rf malts-theme/test/e2e/cypress/results/xml/",
+    "combine:reports": "jrm malts-theme/test/e2e/cypress/results/xml/combined-report.xml \"malts-theme/test/e2e/cypress/results/xml/*.xml\"",
+    "prereport": "npm run delete:reports; npm run clean:reports",
+    "report": "cypress run --project malts-theme/test/e2e --browser chrome --reporter ../../../node_modules/cypress-multi-reporters --reporter-options configFile=cypress/reporter-config.json ; npm run combine:reports",
+    "e2e:junit": "npm run prereport && npm run report",
+    "e2e": "npm run prereport && npm run report; npm run generate:html:report"
   },
   "name": "malts.com",
   "description": "Malts.com",
@@ -31,6 +37,7 @@
     "@testing-library/react": "^11.0.2",
     "babel-jest": "^26.3.0",
     "cypress": "^6.6.0",
+    "cypress-multi-reporters": "^1.4.0",
     "cypress-repeat": "^2.2.1",
     "cypress-wait-until": "^1.7.1",
     "cypress-xpath": "^1.6.1",
@@ -41,7 +48,9 @@
     "eslint-plugin-react": "^7.21.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.2",
+    "junit-report-merger": "^2.2.1",
     "mocha": "^8.3.2",
+    "mocha-junit-reporter": "^2.0.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
@@ -49,6 +58,7 @@
   "dependencies": {
     "cypress-commands": "^1.1.0",
     "eslint-plugin-cypress": "^2.11.2",
-    "wait-on": "^5.3.0"
+    "wait-on": "^5.3.0",
+    "xunit-viewer": "^7.0.1"
   }
 }
